@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../styles.css" rel="stylesheet">
+        <title>Беги - Смотреть онлайн</title>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <ul>
+                        <il><a href="../index.html">Главная</a></il>
+                    </ul>
+                </nav>
+                </header>
+            <main>
+                <section class="movie-info">
+                    <div class="movie-poster">
+                        <img src="../posters/run_on_2020.png">
+                    </div>
+                    <div class="movie-text">
+                        <h1>Беги (2020)</h1>
+                        <p>Бывший спринтер становится спортивным агентом.</p>
+                        <br>
+                        <ul>
+                            <li><b>Оригинальное название:</b> Run On</li>
+                            <li><b>Год:</b> 2020</li>
+                            <li><b>Страна:</b> Южная Корея</li>
+                            <li><b>Категории:</b> Сериал / Дорама / Мелодрама / Спорт</li>
+                            <li><b>Режиссёр:</b> Ли Джэ-хун</li>
+                            <li><b>Актёры:</b> Им Щи-ван / Щин Сэ-гён / Кан Тхэ-о / Чхве Су-ён</li>
+                        </ul>
+                    </div>
+                </section>
+                <hr>
+                <h2>Выберите серию:</h2>
+                <div id="episode-buttons"></div>
+                <div class="movie-player">
+                    <iframe id="player" src="https://rutube.ru/play/embed/3472ef103cfb0f13003bead8ed9a0c7b" allowfullscreen></iframe>
+                </div>
+                <script>
+                    let episodes = [
+                        "https://rutube.ru/play/embed/3472ef103cfb0f13003bead8ed9a0c7b", //1
+                        "https://rutube.ru/play/embed/ee3eee145b2e7f52c569385a33c8b3be", //2
+                    ];
+                    let container = document.getElementById("episode-buttons");
+                    for (let i = 0; i < episodes.length; i++) {
+                        let btn = document.createElement("button");
+                        btn.innerText = `Серия ${i + 1}`;
+                        btn.onclick = function () {
+                            document.getElementById("player").src = episodes[i];
+                        };
+                        container.appendChild(btn);
+                    }
+                </script>
+                <br><br>
+            </main>
+            <footer>
+                <br>
+                <section class="icons">
+                    <div class="img-icon">
+                        <a href="https://www.youtube.com/watch?v=GtL1huin9EE&ab_channel=CSAAInsuranceGroup%2CaAAAInsurer">
+                            <img src="../icons/youtube.png"></a>
+                    </div>
+                </section>
+                <div class="sidebar-container">
+                    <div class="description">
+                        <p><b>Склад Кино</b> - это хранилище различных фильмов, сериалов и мультфильмов. На этом сайте Вы можете смотреть всё в HD-качестве (1080p), бесплатно и без 
+                            регистрации.</p>
+                        <p>Скорее всего все фильмы здесь размещены не совсем законно. Если Вы продолжаете просмтривать этот сайт, Вы согласны с тем, что Вы можете нарушить закон, особенно если 
+                            Вы проживаете в странах ЕС, ЕЭЗ, в США и других.</p>
+                    </div>
+                    <div class="sidebar">
+                        <nav>
+                            <ul>
+                                <li><a href="../index.html">Главная</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <br>
+            </footer>
+        </div>
+    </body>
+</html>
