@@ -22,7 +22,8 @@
                     </div>
                     <div class="movie-text">
                         <h1>Беги (2020)</h1>
-                        <p>Бывший спринтер становится спортивным агентом.</p>
+                        <p>Ки Сон Гём — бывший участник сборной по легкой атлетике, сын представителя Национальной Ассамблеи и топ-актера, а также младший брат королевы гольфа. Его принудили 
+                            заниматься спортом, но затем он встретил того, кто даровал ему свободу.</p>
                         <br>
                         <ul>
                             <li><b>Оригинальное название:</b> Run On</li>
@@ -36,7 +37,7 @@
                 </section>
                 <hr>
                 <h2>Выберите серию:</h2>
-                <div id="episode-buttons"></div>
+                <select id="episode-select"></select>
                 <div class="movie-player">
                     <iframe id="player" src="https://rutube.ru/play/embed/3472ef103cfb0f13003bead8ed9a0c7b" allowfullscreen></iframe>
                 </div>
@@ -44,15 +45,30 @@
                     let episodes = [
                         "https://rutube.ru/play/embed/3472ef103cfb0f13003bead8ed9a0c7b", //1
                         "https://rutube.ru/play/embed/ee3eee145b2e7f52c569385a33c8b3be", //2
+                        "https://rutube.ru/play/embed/6ee595b6b773330662c213670ff3dd29", //3
+                        "https://rutube.ru/play/embed/61b730e0931e5505341dd9dd0d65d373", //4
+                        "https://rutube.ru/play/embed/e40abae4c8a425bc71f6722ad6e5d664", //5
+                        "https://rutube.ru/play/embed/8ba7b5c798a16a36f4bc16775386f4ee", //6
+                        "https://rutube.ru/play/embed/4ac422580814ad694142c793d77189f2", //7
+                        "https://rutube.ru/play/embed/93a1b210dc77fba05c0d6a24bf49a149", //8
+                        "https://rutube.ru/play/embed/a1b91f006b7dff1b852ab1eb9e870413", //9
+                        "https://rutube.ru/play/embed/34a6b30448d49ab57c212059447a84df", //10
+                        "https://rutube.ru/play/embed/3336400dcb0c59d006d874045db84af4", //11
+                        "https://rutube.ru/play/embed/a4b8d0c463c401b36fc59f12e01967f0", //12
+                        "https://rutube.ru/play/embed/5701998e42575f3029597605a754a2f7", //13
+                        "https://rutube.ru/play/embed/b872313304ab91d28fad91aa0d4faa71", //14
+                        "https://rutube.ru/play/embed/43dce6a94456eb72630a227393224ec5", //15
+                        "https://rutube.ru/play/embed/d4c7e423d38977f36d2c323643674cef", //16
                     ];
-                    let container = document.getElementById("episode-buttons");
+                    let container = document.getElementById("episode-select");
                     for (let i = 0; i < episodes.length; i++) {
-                        let btn = document.createElement("button");
-                        btn.innerText = `Серия ${i + 1}`;
-                        btn.onclick = function () {
-                            document.getElementById("player").src = episodes[i];
+                        let option = document.createElement("option");
+                        option.value = episodes[i];
+                        option.innerText = `Серия ${i + 1}`;
+                        container.appendChild(option);
                         };
-                        container.appendChild(btn);
+                    container.onchange = function () {
+                        document.getElementById("player").src = this.value;
                     }
                 </script>
                 <br><br>
