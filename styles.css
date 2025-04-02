@@ -144,4 +144,12 @@ footer nav a {
 h2 {
     margin-left: 20px;
 }
+
+#episode-select {
+    font-size: 16px;
+    padding: 5px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
 /*movies*/
